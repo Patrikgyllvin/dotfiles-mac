@@ -1,0 +1,57 @@
+Tillägg "Sketch Input" misslyckades att laddas eftersom ett beroende kunde ej uppfyllas.
+Dependency:
+  type: executable
+  location: slinga
+  string: skconvert
+
+Tillägg "Dia Input" misslyckades att laddas eftersom ett beroende kunde ej uppfyllas.
+Dependency:
+  type: executable
+  location: slinga
+  string: dia
+  description: För att kunna importera Dia-filer måste Dia självt vara installerat. Du kan ladda ner Dia från http://live.gnome.org/Dia
+
+Tillägg "EPS Input" misslyckades att laddas eftersom ett beroende kunde ej uppfyllas.
+Dependency:
+  type: executable
+  location: slinga
+  string: ps2pdf
+
+Tillägg "XFIG Input" misslyckades att laddas eftersom ett beroende kunde ej uppfyllas.
+Dependency:
+  type: executable
+  location: slinga
+  string: fig2dev
+
+Tillägg "Win32 Vector Print" misslyckades att laddas eftersom the extension is designed for Windows only.  Detta orsakas av en importerare .inx-fil för detta tillägg.  En oegentlig inx-fil kan ha orsakats av felaktig Inkscape-installation.
+Tillägg "LaTeX" misslyckades att laddas eftersom ett beroende kunde ej uppfyllas.
+Dependency:
+  type: executable
+  location: slinga
+  string: latex
+
+Tillägg "LaTeX" misslyckades att laddas eftersom ett beroende kunde ej uppfyllas.
+Dependency:
+  type: executable
+  location: slinga
+  string: dvips
+
+Tillägg "LaTeX" misslyckades att laddas eftersom ett beroende kunde ej uppfyllas.
+Dependency:
+  type: executable
+  location: slinga
+  string: pstoedit
+
+Tillägg "DXF Output" misslyckades att laddas eftersom ett beroende kunde ej uppfyllas.
+Dependency:
+  type: executable
+  location: slinga
+  string: pstoedit
+  description: pstoedit must be installed to run; see http://www.pstoedit.net/pstoedit
+
+Tillägg "PostScript Input" misslyckades att laddas eftersom ett beroende kunde ej uppfyllas.
+Dependency:
+  type: executable
+  location: slinga
+  string: ps2pdf
+
