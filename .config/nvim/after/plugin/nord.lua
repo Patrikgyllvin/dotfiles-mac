@@ -6,3 +6,5 @@ vim.g.nord_uniform_diff_background = true
 vim.g.nord_bold = false
 
 require('nord').set()
+
+vim.cmd('colorscheme nord')

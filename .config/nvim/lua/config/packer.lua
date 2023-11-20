@@ -1,9 +1,21 @@
-vim.cmd [[packadd packer.nvim]]
+local ensure_packer = function()
+  local fn = vim.fn
+  local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+  if fn.empty(fn.glob(install_path)) > 0 then
+    fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+    vim.cmd [[packadd packer.nvim]]
+    return true
+  end
+  return false
+end
+
+local packer_bootstrap = ensure_packer()
 
 return require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
 
+    -- lsp, autocompletion
     use {
         'VonHeikemen/lsp-zero.nvim',
         requires = {
@@ -26,58 +38,91 @@ return require('packer').startup(function(use)
         }
     }
 
-    use "nvim-lua/plenary.nvim"
+    use({ -- improves neovim lsp experience
+		"glepnir/lspsaga.nvim",
+		config = function()
+			require("lspsaga").setup({})
+		end,
+		requires = {
+			{ "nvim-tree/nvim-web-devicons" },
+			--Please make sure you install markdown and markdown_inline parser
+			{ "nvim-treesitter/nvim-treesitter" },
+		},
+	})
 
-    use {
-        'nvim-telescope/telescope.nvim', tag = '0.1.1',
-        -- or                            , branch = '0.1.x',
-        requires = { {'nvim-lua/plenary.nvim'} }
+    use 'onsails/lspkind.nvim'
+
+    -- syntax
+    use { -- hightlighting
+        'nvim-treesitter/nvim-treesitter',
+        run = ':TSUpdate'
     }
 
-    use 'shaunsingh/nord.nvim'
+    use 'folke/lsp-colors.nvim'
 
-    use 'mhinz/vim-startify'
-
+    -- git & file management
     use 'tpope/vim-fugitive'
 
-    use 'nvim-tree/nvim-web-devicons'
+    use {
+        'kdheepak/lazygit.nvim',
+        requires = 'nvim-lua/plenary.nvim',
+    }
+
+    use {'akinsho/bufferline.nvim', requires = 'nvim-web-devicons'}
+
+    use {
+        'nvim-tree/nvim-tree.lua',
+        requires = 'nvim-web-devicons', -- optional, for file icons
+        tag = 'nightly' -- optional, updated every week. (see issue #1193)
+    }
+
+    use 'lewis6991/gitsigns.nvim'
+
+    -- formatting
+
+    use 'echasnovski/mini.trailspace'
+
+    --aesthetics
+    use "lukas-reineke/indent-blankline.nvim"
+
+    use 'kyazdani42/nvim-web-devicons'
+    use {
+        'yamatsum/nvim-nonicons',
+        requires = 'kyazdani42/nvim-web-devicons',
+        -- require('nvim-nonicons').setup(),
+    }
+
+    use 'rcarriga/nvim-notify'
+    use 'shaunsingh/nord.nvim'
     use {
         'nvim-lualine/lualine.nvim',
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
 
-    use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
+    use 'rmehri01/onenord.nvim'
+    use 'arzg/vim-colors-xcode'
 
+    -- general tools
     use {
-        'nvim-tree/nvim-tree.lua',
-        requires = {
-            'nvim-tree/nvim-web-devicons', -- optional, for file icons
-        },
-        tag = 'nightly' -- optional, updated every week. (see issue #1193)
+        'nvim-telescope/telescope.nvim', tag = '0.1.x',
+        -- or                            , branch = '0.1.x',
+        requires = 'nvim-lua/plenary.nvim',
     }
 
-    use "lukas-reineke/indent-blankline.nvim"
+    use 'goolord/alpha-nvim' -- startup menu
+    use 'ggandor/lightspeed.nvim' -- fast navigation
 
-    use {
-        'nvim-treesitter/nvim-treesitter',
-        run = ':TSUpdate'
-    }
-
-    use 'ggandor/lightspeed.nvim'
-
-    use 'rcarriga/nvim-notify'
-
-    use { 'dccsillag/magma-nvim', run = ':UpdateRemotePlugins' }
+    use { 'dccsillag/magma-nvim', run = ':UpdateRemotePlugins' } -- jupyter
     use 'untitled-ai/jupyter_ascending.vim'
 
-    use {
+    use { -- pdf reader
         'marioortizmanero/adoc-pdf-live.nvim',
         config = "require('adoc_pdf_live').setup()"
     }
 
-    use({'scalameta/nvim-metals', requires = { "nvim-lua/plenary.nvim" }})
+    use({'scalameta/nvim-metals', requires = { "nvim-lua/plenary.nvim" }}) -- scala metals
 
-    use {
+    use { -- markdown headlines
         'lukas-reineke/headlines.nvim',
         config = function()
             require('headlines').setup()
@@ -85,4 +130,8 @@ return require('packer').startup(function(use)
     }
 
     use 'mbbill/undotree'
+
+    if packer_bootstrap then
+        require('packer').sync()
+    end
 end)

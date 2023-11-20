@@ -85,6 +85,11 @@ _G.packer_plugins = {
     path = "/Users/patrikgyllvin/.local/share/nvim/site/pack/packer/start/adoc-pdf-live.nvim",
     url = "https://github.com/marioortizmanero/adoc-pdf-live.nvim"
   },
+  ["alpha-nvim"] = {
+    loaded = true,
+    path = "/Users/patrikgyllvin/.local/share/nvim/site/pack/packer/start/alpha-nvim",
+    url = "https://github.com/goolord/alpha-nvim"
+  },
   ["bufferline.nvim"] = {
     loaded = true,
     path = "/Users/patrikgyllvin/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
@@ -120,6 +125,11 @@ _G.packer_plugins = {
     path = "/Users/patrikgyllvin/.local/share/nvim/site/pack/packer/start/friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
   },
+  ["gitsigns.nvim"] = {
+    loaded = true,
+    path = "/Users/patrikgyllvin/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
+    url = "https://github.com/lewis6991/gitsigns.nvim"
+  },
   ["headlines.nvim"] = {
     config = { "\27LJ\2\n7\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\14headlines\frequire\0" },
     loaded = true,
@@ -136,15 +146,36 @@ _G.packer_plugins = {
     path = "/Users/patrikgyllvin/.local/share/nvim/site/pack/packer/start/jupyter_ascending.vim",
     url = "https://github.com/untitled-ai/jupyter_ascending.vim"
   },
+  ["lazygit.nvim"] = {
+    loaded = true,
+    path = "/Users/patrikgyllvin/.local/share/nvim/site/pack/packer/start/lazygit.nvim",
+    url = "https://github.com/kdheepak/lazygit.nvim"
+  },
   ["lightspeed.nvim"] = {
     loaded = true,
     path = "/Users/patrikgyllvin/.local/share/nvim/site/pack/packer/start/lightspeed.nvim",
     url = "https://github.com/ggandor/lightspeed.nvim"
   },
+  ["lsp-colors.nvim"] = {
+    loaded = true,
+    path = "/Users/patrikgyllvin/.local/share/nvim/site/pack/packer/start/lsp-colors.nvim",
+    url = "https://github.com/folke/lsp-colors.nvim"
+  },
   ["lsp-zero.nvim"] = {
     loaded = true,
     path = "/Users/patrikgyllvin/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",
     url = "https://github.com/VonHeikemen/lsp-zero.nvim"
+  },
+  ["lspkind.nvim"] = {
+    loaded = true,
+    path = "/Users/patrikgyllvin/.local/share/nvim/site/pack/packer/start/lspkind.nvim",
+    url = "https://github.com/onsails/lspkind.nvim"
+  },
+  ["lspsaga.nvim"] = {
+    config = { "\27LJ\2\n9\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\flspsaga\frequire\0" },
+    loaded = true,
+    path = "/Users/patrikgyllvin/.local/share/nvim/site/pack/packer/start/lspsaga.nvim",
+    url = "https://github.com/glepnir/lspsaga.nvim"
   },
   ["lualine.nvim"] = {
     loaded = true,
@@ -166,6 +197,11 @@ _G.packer_plugins = {
     path = "/Users/patrikgyllvin/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
+  ["mini.trailspace"] = {
+    loaded = true,
+    path = "/Users/patrikgyllvin/.local/share/nvim/site/pack/packer/start/mini.trailspace",
+    url = "https://github.com/echasnovski/mini.trailspace"
+  },
   ["nord.nvim"] = {
     loaded = true,
     path = "/Users/patrikgyllvin/.local/share/nvim/site/pack/packer/start/nord.nvim",
@@ -186,6 +222,11 @@ _G.packer_plugins = {
     path = "/Users/patrikgyllvin/.local/share/nvim/site/pack/packer/start/nvim-metals",
     url = "https://github.com/scalameta/nvim-metals"
   },
+  ["nvim-nonicons"] = {
+    loaded = true,
+    path = "/Users/patrikgyllvin/.local/share/nvim/site/pack/packer/start/nvim-nonicons",
+    url = "https://github.com/yamatsum/nvim-nonicons"
+  },
   ["nvim-notify"] = {
     loaded = true,
     path = "/Users/patrikgyllvin/.local/share/nvim/site/pack/packer/start/nvim-notify",
@@ -204,7 +245,12 @@ _G.packer_plugins = {
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "/Users/patrikgyllvin/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
-    url = "https://github.com/nvim-tree/nvim-web-devicons"
+    url = "https://github.com/kyazdani42/nvim-web-devicons"
+  },
+  ["onenord.nvim"] = {
+    loaded = true,
+    path = "/Users/patrikgyllvin/.local/share/nvim/site/pack/packer/start/onenord.nvim",
+    url = "https://github.com/rmehri01/onenord.nvim"
   },
   ["packer.nvim"] = {
     loaded = true,
@@ -226,15 +272,15 @@ _G.packer_plugins = {
     path = "/Users/patrikgyllvin/.local/share/nvim/site/pack/packer/start/undotree",
     url = "https://github.com/mbbill/undotree"
   },
+  ["vim-colors-xcode"] = {
+    loaded = true,
+    path = "/Users/patrikgyllvin/.local/share/nvim/site/pack/packer/start/vim-colors-xcode",
+    url = "https://github.com/arzg/vim-colors-xcode"
+  },
   ["vim-fugitive"] = {
     loaded = true,
     path = "/Users/patrikgyllvin/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
-  },
-  ["vim-startify"] = {
-    loaded = true,
-    path = "/Users/patrikgyllvin/.local/share/nvim/site/pack/packer/start/vim-startify",
-    url = "https://github.com/mhinz/vim-startify"
   }
 }
 
@@ -247,6 +293,10 @@ time([[Config for headlines.nvim]], false)
 time([[Config for adoc-pdf-live.nvim]], true)
 require('adoc_pdf_live').setup()
 time([[Config for adoc-pdf-live.nvim]], false)
+-- Config for: lspsaga.nvim
+time([[Config for lspsaga.nvim]], true)
+try_loadstring("\27LJ\2\n9\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\flspsaga\frequire\0", "config", "lspsaga.nvim")
+time([[Config for lspsaga.nvim]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then
