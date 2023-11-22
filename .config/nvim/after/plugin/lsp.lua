@@ -1,10 +1,20 @@
 local lsp = require('lsp-zero')
 lsp.preset('recommended')
 
-lsp.ensure_installed({
-    'clangd',
-    'pyright',
-    'rust_analyzer',
+lsp.on_attach(function(client, bufnr)
+    lsp_zero.default_keymaps({buffer = bufnr})
+end)
+
+require('mason').setup({})
+require('mason-lspconfig').setup({
+    ensure_installed = {
+        'clangd',
+        'pyright',
+        'rust_analyzer',
+    },
+    handlers = {
+        lsp.default_setup,
+    },
 })
 
 local cmp = require('cmp')
@@ -15,8 +25,5 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
     ['<C-l>'] = cmp.mapping.confirm(cmp_select),
     ['<C-Space>'] = cmp.mapping.complete(),
 })
-
--- (Optional) Configure lua language server for neovim
-lsp.nvim_workspace()
 
 lsp.setup()
