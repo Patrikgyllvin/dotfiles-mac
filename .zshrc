@@ -125,3 +125,5 @@ function zsh_directory_name() {
   done
   return 1
 }
+
+export EDITOR=nvim
