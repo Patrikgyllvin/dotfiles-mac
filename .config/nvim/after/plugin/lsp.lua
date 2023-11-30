@@ -2,7 +2,8 @@ local lsp = require('lsp-zero')
 lsp.preset('recommended')
 
 lsp.on_attach(function(client, bufnr)
-    lsp_zero.default_keymaps({buffer = bufnr})
+    lsp.default_keymaps({buffer = bufnr})
+    client.server_capabilities.semanticTokensProvider = nil
 end)
 
 require('mason').setup({})
