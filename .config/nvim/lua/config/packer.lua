@@ -38,17 +38,17 @@ return require('packer').startup(function(use)
         }
     }
 
-    use({ -- improves neovim lsp experience
-		"glepnir/lspsaga.nvim",
-		config = function()
-			require("lspsaga").setup({})
-		end,
-		requires = {
-			{ "nvim-tree/nvim-web-devicons" },
-			--Please make sure you install markdown and markdown_inline parser
-			{ "nvim-treesitter/nvim-treesitter" },
-		},
-	})
+    --use({ -- improves neovim lsp experience
+	--	"glepnir/lspsaga.nvim",
+	--	config = function()
+	--		require("lspsaga").setup({})
+	--	end,
+	--	requires = {
+	--		{ "nvim-tree/nvim-web-devicons" },
+	--		--Please make sure you install markdown and markdown_inline parser
+	--		{ "nvim-treesitter/nvim-treesitter" },
+	--	},
+	--})
 
     use 'onsails/lspkind.nvim'
 
