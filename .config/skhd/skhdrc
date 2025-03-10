@@ -99,11 +99,9 @@
 
 # prevent skhd from monitoring events for specific applications.
 #
-# .blacklist [
-#    "kitty"
-#    "terminal"
-#    "qutebrowser"
-# ]
+.blacklist [
+   "safari"
+]
 
 # open terminal, blazingly fast compared to iTerm/Hyper
 alt - return : /Applications/Kitty.app/Contents/MacOS/kitty --single-instance -d ~
@@ -199,6 +197,8 @@ ctrl + shift + alt - 0 : yabai -m window --space 10; yabai -m space --focus 10
 # focus monitor
 cmd - w  : yabai -m display --focus next || yabai -m display --focus first
 cmd - s  : yabai -m display --focus prev || yabai -m display --focus last
+cmd - l  : yabai -m display --focus east
+cmd - h  : yabai -m display --focus west
 ctrl + cmd - 1  : yabai -m display --focus 1
 ctrl + cmd - 2  : yabai -m display --focus 2
 ctrl + cmd - 3  : yabai -m display --focus 3
