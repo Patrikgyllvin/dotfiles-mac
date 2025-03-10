@@ -127,3 +127,6 @@ function zsh_directory_name() {
 }
 
 export EDITOR=nvim
+
+# Created by `pipx` on 2024-05-15 08:44:59
+export PATH="$PATH:/Users/patrikgyllvin/.local/bin"
