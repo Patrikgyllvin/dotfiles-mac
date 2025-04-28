@@ -16,6 +16,20 @@ require('mason-lspconfig').setup({
     },
     handlers = {
         lsp.default_setup,
+        ['clangd'] = function ()
+            require('lspconfig').clangd.setup {
+                cmd = {
+                    'clangd',
+                    '--background-index',
+                    -- by default, clang-tidy use -checks=clang-diagnostic-*,clang-analyzer-*
+                    -- to add more checks, create .clang-tidy file in the root directory
+                    -- and add Checks key, see https://clang.llvm.org/extra/clang-tidy/
+                    "--clang-tidy",
+                    "--completion-style=bundled",
+                    "--header-insertion=iwyu",
+                }
+            }
+        end
     },
 })
 
